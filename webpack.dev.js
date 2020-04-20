@@ -13,7 +13,22 @@ module.exports = merge(common, {
     openPage: 'http://localhost:9000/',
   },
   module: {
-    rules: [],
+    rules: [
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
+    ],
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
 });
